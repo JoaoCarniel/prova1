@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+    float medi_func_cubo(int a, int b, int c, int limite_inf, int limite_sup) 
+    {
+        
+        int x, y, soma_ac;
+        float media;
+        
+        /* testar consistencia de limites e inverter se necessário */
+        if (limite_inf > limite_sup) {
+            int aux;
+            aux = limite_sup;
+            limite_sup = limite_inf;
+            limite_inf = aux;
+        }
+        
+        for ( soma_ac = 0, x = limite_inf; x <= limite_sup; x++ ) 
+        {
+            y = a * x * x * x + b * x * x + c * x;
+             soma_ac = soma_ac + y;
+             
+        }
+        
+         /* calcular a média aqui */
+        media = (float) soma_ac / (limite_sup - limite_inf + 1);
+    
+        return media;
+    }    
+       
+       
+        
+    int main()
+    {
+        
+        float media;
+        int a,b,c,inf,sup;
+        
+    
+        a = 2; b = 7; c = 1; inf = 10; sup = 100;
+        media = medi_func_cubo(a, b, c, inf, sup);
+    
+        printf("media calculada para a = %d b = %d c = %d d = -1 limite inferior = %d e limite superior %d : %f\n", a, b, c, inf, sup, media);    
+            
+        a = 2; b = 7; c = 1; inf = 100; sup = 10;
+        media = medi_func_cubo(a, b, c, inf, sup);
+    
+        printf("media calculada para a = %d b = %d c = %d d = -1 limite inferior = %d e limite superior %d : %f\n", a, b, c, inf, sup, media);
+    
+        return 0;
+        
+    }
