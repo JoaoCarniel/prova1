@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int main() {
+    
+    int x=0, y=0;
+    int i, j, n, c, l;
+    
+    int menu;
+    
+    printf ("Digite o numero da opção que voce deseja usar... \n");
+    printf ("(1) Para desenhar um retangulo.\n");
+    printf ("(2) Para desenhar um triangulo retangulo.\n");
+    printf ("(3) Encerrar o programa.\n");
+    
+    scanf("%d", &menu);
+    
+    switch (menu)
+    {
+        
+        // Opcão 1
+        case 1 :
+            printf("Introduza uma Altura Valida""\n");
+            scanf("%d",&x);
+            printf("Introduza uma Largura Valida""\n");
+            scanf("%d",&y);
+                        
+            for(j=0; j< x; j++){
+                for(i=0; i < y; i++){
+                printf("#");
+                }
+                printf("\n");
+                }
+        break;
+        
+        // Opção 2
+        case 2 :
+        printf("Digite a Altura: ");
+        scanf("%d", &n);
+        
+        for (l=1;l<=n;l++) {
+            for(c=1;c<=l;c++){
+            printf("*");
+            }
+            printf("\n");
+            }
+        break;
+        
+        // Opção 3
+        case 3 :
+        printf ("Programa encerrado...\n");
+        break;
+        
+        default :
+            printf ("Não corresponde a nenhuma opcao do menu...\n");
+    }
+    return 0;
+}
